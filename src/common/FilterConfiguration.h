@@ -132,7 +132,7 @@ struct FilterSelectorMapper : public ParameterDiscreteIndexRemapper
         p(FilterType::fut_comb_pos, "Effect");
         p(FilterType::fut_comb_neg, "Effect");
         p(FilterType::fut_SNH, "Effect");
-
+        p(FilterType::fut_low_cut, "Low Cut");
         int c = 0;
         for (auto e : mapping)
             inverseMapping[e.first] = c++;
@@ -217,6 +217,7 @@ const int fut_glyph_index[sst::filters::num_filter_types][2] = {
     {4, bprow},    // fut_resonancewarp_bp
     {0, fxrow},    // fut_resonancewarp_ap (also temporarily set to just use the regular AP glyph)
     {0, multirow}, // fut_tripole
+    {10,lprow},
 };
 
 const char wst_ui_names[(int)sst::waveshapers::WaveshaperType::n_ws_types][16] = {
